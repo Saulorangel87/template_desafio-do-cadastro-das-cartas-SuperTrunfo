@@ -14,6 +14,7 @@ int main(){
     float densidadepopulacional2 = populacao2 / area2;
     float pibpercapta1 = pib1 / populacao1;
     float pibpercapta2 = pib2 / populacao2;
+    float Superpodercarta1 , SuperPodercarta2;
 
 
     // entrada de dados da carta 1
@@ -50,9 +51,9 @@ int main(){
     // calculo de densidade populacional e PIB per Capta da carta 1
     
     densidadepopulacional1 = populacao1 / area1;
-    printf("Densidade populacional1 é: %.2f\n" , densidadepopulacional1);
+    printf("Densidade populacional1 é: %.2f Hab/Km²\n" , densidadepopulacional1);
     pibpercapta1 = pib1 / populacao1;
-    printf("PIB per Capta1: %.3f\n" , pibpercapta1);
+    printf("PIB per Capta1: %.3f Reais/Hab\n" , pibpercapta1);
 
 
     // entrada de dados da carta 2
@@ -89,9 +90,23 @@ int main(){
     //calculo de densidade populacional e PIB per Capta da carta 2
 
     densidadepopulacional2 = populacao2 / area2;
-    printf("Densidade populacional2 é: %.2f\n" , densidadepopulacional2);
+    printf("Densidade populacional2 é: %.2f Hab/Km²\n" , densidadepopulacional2);
     pibpercapta2 = pib2 / populacao2;
-    printf("PIB per Capta2: %.3f\n" , pibpercapta2);
+    printf("PIB per Capta2: %.3f Reais/Hab\n" , pibpercapta2);
+
+    //calculo do super poder
+
+    Superpodercarta1 = populacao1 + area1 + pib1 + ponto1 + pibpercapta1 / densidadepopulacional1;
+    SuperPodercarta2 = populacao2 + area2 + pib2 + ponto2 + pibpercapta2 / densidadepopulacional2;
+
+    printf("\nSuper Poder carta 1: %.3f\n" , Superpodercarta1);
+    printf("Super Poder carta 2: %.3f\n" , SuperPodercarta2);
+
+    //carta vencedora: 1 para verdaddeiro e 0 para falso
+
+    printf("\nA carta 1 venceu: %d\n" , Superpodercarta1 > SuperPodercarta2);
+    printf("A carta 2 venceu: %d\n" , Superpodercarta1 < SuperPodercarta2);
+    printf("Houve empate: %d\n" , Superpodercarta1 == SuperPodercarta2);
 
 
     return 0;
